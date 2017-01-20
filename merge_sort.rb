@@ -48,4 +48,29 @@ def merge(left, right, array)
   return array
 end
 
+def quicksort(array, start, end_index)
+  if start < end_index
+    p_index = partitian(array, start, end_index)
+    quicksort(array, p_index+1, end_index)
+    quicksort(array, start, p_index-1)
+  end
+  return array
+end
+
+def partitian(array, start, end_index)
+  pivot = array[end_index]
+  p_index = start
+  i = start
+  while i < end_index
+    if array[i] <= pivot
+      array[i] = array[p_index]
+      array[i], array[p_index] = array[p_index], array[i]
+      p_index += 1
+    end
+    i+=1
+  end
+  array[p_index], array[end_index] = array[end_index], array[p_index]
+  return p_index
+end
+
 a = [2, 4, 6, 3, 12, 10, 19, 25, 14, 8]
