@@ -9,4 +9,6 @@ end
 
 count_hash = buffer.char_count
 
-puts count_hash
+count_hash.each do |k, v|
+  puts "#{k}: #{v}"
+end

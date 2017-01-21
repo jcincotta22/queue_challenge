@@ -74,3 +74,8 @@ def partitian(array, start, end_index)
 end
 
 a = [2, 4, 6, 3, 12, 10, 19, 25, 14, 8]
+
+print merge_sort(a)
+puts
+puts '================'
+print quicksort(a, 0, a.length-1)
